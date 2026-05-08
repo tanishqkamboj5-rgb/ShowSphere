@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CINÉMA SPHERE — Booking Confirmed</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">SHOW<span>SPHERE</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Now Showing</a></li>
+      <li><a href="booking.html">Book Tickets</a></li>
+      <li><a href="food.html">Food &amp; Drinks</a></li>
+      <li><a href="confirmation.html"  class="active">My Bookings</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right-group">
+      <div class="location-selector-wrap">
+        <select id="city-select" class="city-select-nav" title="Select your city">
+          <option value="">📍 Select City</option>
+        </select>
+      </div>
+      <a href="login.html" class="nav-login-btn" id="nav-login-link">Login / Sign Up</a>
+      <span class="nav-user-greeting" id="nav-user-greeting" style="display:none"></span>
+      <div class="nav-date" id="nav-date-el"></div>
+    </div>
+  </nav>
+
+  <!-- CONFIRMATION HERO -->
+  <div class="confirm-hero">
+    <div class="confirm-icon">✓</div>
+    <span class="section-tag">— RESERVATION CONFIRMED</span>
+    <h1>Your seats are <em>reserved</em>.</h1>
+    <p>A confirmation email has been sent to your inbox. Enjoy the show!</p>
+  </div>
+
+  <main class="confirm-main">
+
+    <!-- TICKET CARD -->
+    <div class="ticket-card">
+      <div class="ticket-left" style="display: flex; justify-content: center; overflow: hidden;">
+        <div class="ticket-movie-art"
+          style="background-image: URL(posters/dhurandar2.jpg); background-size: cover; width : 100% ; height: auto;">
+          <span class="ticket-art-symbol">◈</span>
+        </div>
+        <div class="ticket-qr">
+          <div class="qr-box">
+            <div class="qr-inner">
+              <!-- CSS-only QR-like pattern -->
+              
+            </div>
+          </div>
+          <div class="qr-label">SCAN AT ENTRY</div>
+        </div>
+      </div>
+
+      <div class="ticket-divider">
+        <div class="divider-circle top"></div>
+        <div class="divider-line"></div>
+        <div class="divider-circle bottom"></div>
+      </div>
+
+      <div class="ticket-right">
+        <div class="ticket-header">
+          <span class="ticket-cinema">SHOW SPHERE</span>
+          <span class="ticket-number">#CNR-2026-04812</span>
+        </div>
+        <h2 class="ticket-title">Dhurandhar : The Revenge </h2>
+        <div class="ticket-genre">Drama · Mystery · Dolby Atmos</div>
+
+        <div class="ticket-details-grid">
+          <div class="ticket-detail">
+            <span class="detail-label">DATE</span>
+            <span class="detail-value">May 8,2026</span>
+          </div>
+          <div class="ticket-detail">
+            <span class="detail-label">TIME</span>
+            <span class="detail-value">2:30 PM</span>
+          </div>
+          <div class="ticket-detail">
+            <span class="detail-label">SCREEN</span>
+            <span class="detail-value">Hall 3 — PVR Cinemas</span>
+          </div>
+          <div class="ticket-detail">
+            <span class="detail-label">SEATS</span>
+            <span class="detail-value">D7, D8</span>
+          </div>
+          <div class="ticket-detail">
+            <span class="detail-label">TYPE</span>
+            <span class="detail-value">Adult × 2</span>
+          </div>
+          <div class="ticket-detail">
+            <span class="detail-label">TOTAL PAID</span>
+            <span class="detail-value gold">₹998</span>
+          </div>
+        </div>
+
+        <div class="ticket-guest">
+          <span class="detail-label">GUEST</span>
+          <span>Arjun Sharma &nbsp;·&nbsp; arjun@email.com</span>
+        </div>
+
+        <div class="ticket-addons">
+          <span class="detail-label">ADD-ONS</span>
+          <span>🍿 Popcorn Combo &nbsp;·&nbsp; 🥤 Large Drink</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOD ORDER BILL -->
+    <div class="food-bill-section" id="food-bill-section" style="display:none;">
+      <div class="step-label">— FOOD &amp; DRINKS ORDER</div>
+      <div class="food-bill-card">
+        <div class="food-bill-header">
+          <span class="food-bill-icon">🍽</span>
+          <div>
+            <h3 class="food-bill-title">Lounge Order Receipt</h3>
+            <p class="food-bill-sub">Items will be delivered to your seat before the show</p>
+          </div>
+        </div>
+        <div class="food-bill-items" id="food-bill-items">
+          <!-- Populated by JS -->
+        </div>
+        <div class="food-bill-totals">
+          <div class="food-bill-row"><span>Subtotal</span><span id="food-bill-subtotal">—</span></div>
+          <div class="food-bill-row"><span>Service Charge (5%)</span><span id="food-bill-service">—</span></div>
+          <div class="food-bill-row food-bill-total-row"><span>Total</span><span id="food-bill-total" class="gold">—</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- INSTRUCTIONS -->
+    <div class="instructions-row">
+      <div class="instruction-card">
+        <div class="instr-icon">📍</div>
+        <h4>Arrive Early</h4>
+        <p>Please arrive at least 15 minutes before the show. Doors open 20 minutes prior.</p>
+      </div>
+      <div class="instruction-card">
+        <div class="instr-icon">📱</div>
+        <h4>Digital Ticket</h4>
+        <p>Show the QR code on your phone or printout at the entrance. No physical ticket needed.</p>
+      </div>
+      <div class="instruction-card">
+        <div class="instr-icon">🎬</div>
+        <h4>Enjoy the Show</h4>
+        <p>Phones on silent. Recline your seat. Lose yourself in the story. That's what we're here for.</p>
+      </div>
+    </div>
+
+    <!-- PAST BOOKINGS -->
+    <section class="past-bookings">
+      <div class="step-label">— PAST BOOKINGS</div>
+      <table class="bookings-table">
+        <thead>
+          <tr>
+            <th>Booking ID</th>
+            <th>Film</th>
+            <th>Date</th>
+            <th>Seats</th>
+            <th>Total</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="mono">#CNR-2026-04812</td>
+            <td>Dhurandhar : The Revenge </td>
+            <td>Apr 01, 2026</td>
+            <td>D7, D8</td>
+            <td>₹998</td>
+            <td><span class="status confirmed">Confirmed</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#CNR-2026-03941</td>
+            <td>Hoppers</td>
+            <td>Mar 20, 2026</td>
+            <td>B5, B6</td>
+            <td>₹598</td>
+            <td><span class="status attended">Attended</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#CNR-2026-02716</td>
+            <td>Toxic</td>
+            <td>Feb 14, 2026</td>
+            <td>E3</td>
+            <td>₹499</td>
+            <td><span class="status attended">Attended</span></td>
+          </tr>
+          <tr>
+            <td class="mono">#CNR-2025-09183</td>
+            <td>Project Hail Mary</td>
+            <td>Dec 25, 2025</td>
+            <td>C2, C3, C4</td>
+            <td>₹897</td>
+            <td><span class="status cancelled">Cancelled</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div class="cta-row">
+      <a href="index.html" class="btn-primary">Browse More Films →</a>
+      <a href="booking.html" class="btn-outline">Book Another Ticket</a>
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">SHOW<span>SPHERE</span></div>
+    <div class="footer-links">
+      <a href="index.html">Now Showing</a>
+      <a href="booking.html">Bookings</a>
+      <a href="food.html">Food &amp; Drinks</a>
+      <a href="confirmation.html">My Tickets</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-copy">© 2026 SHOW SPHERE. All rights reserved.</div>
+  </footer>
+
+</body>
+<script src="shared.js"></script>
+<script src="confirmation (1).js"></script>
+</html>
