@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOW SPHERE — Book Your Experience</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">SHOW<span>SPHERE</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Now Showing</a></li>
+      <li><a href="booking.html">Book Tickets</a></li>
+      <li><a href="food.html">Food &amp; Drinks</a></li>
+      <li><a href="confirmation.html">My Bookings</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right-group">
+      <div class="location-selector-wrap">
+        <select id="city-select" class="city-select-nav" title="Select your city">
+          <option value="">📍 Select City</option>
+        </select>
+      </div>
+      <a href="login.html" class="nav-login-btn" id="nav-login-link">Login / Sign Up</a>
+      <span class="nav-user-greeting" id="nav-user-greeting" style="display:none"></span>
+      <div class="nav-date" id="nav-date-el"></div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <!-- HERO -->
+  <header class="hero">
+    <div class="hero-label">NOW SHOWING</div>
+    <h1 class="hero-title">The Art of<br><em>Cinema</em></h1>
+    <p class="hero-sub">Hand-picked screenings. Curated seats. Unforgettable evenings.</p>
+    <a href="booking.html" class="btn-primary">Reserve a Seat →</a>
+    <div class="hero-ticker">
+      <span>★ DOLBY ATMOS &nbsp;&nbsp;·&nbsp;&nbsp; ★ 4K LASER &nbsp;&nbsp;·&nbsp;&nbsp; ★ LUXURY RECLINERS
+        &nbsp;&nbsp;·&nbsp;&nbsp; ★ DIRECTOR'S LOUNGE &nbsp;&nbsp;·&nbsp;&nbsp; ★ DOLBY ATMOS &nbsp;&nbsp;·&nbsp;&nbsp;
+        ★ 4K LASER &nbsp;&nbsp;·&nbsp;&nbsp; ★ LUXURY RECLINERS &nbsp;&nbsp;·&nbsp;&nbsp;</span>
+    </div>
+  </header>
+
+  <!-- MOVIES GRID -->
+  <main class="main-content">
+    <div class="section-header">
+      <span class="section-tag">— WEEKLY SELECTION</span>
+      <h2>Featured Films</h2>
+    </div>
+
+    <div class="movies-grid">
+
+      <!-- MOVIE 1 -->
+      <article class="movie-card">
+        <div class="movie-poster" style="background-image: url(posters/hoppers2.jpg); background-size: cover;"">
+          <div class=" poster-text">
+          <span class="poster-year">2026</span>
+          <span class="poster-rating">PG-13</span>
+        </div>
+
+    </div>
+    <div class="movie-info">
+      <div class="movie-genre">Sci-Fi · Thriller</div>
+      <h3 class="movie-title">Hoppers</h3>
+      <p class="movie-desc">A physicist unravels the fabric of time when she discovers her consciousness exists
+        simultaneously across three timelines.</p>
+      <div class="movie-meta">
+        <span>⏱ 2h 24m</span>
+        <span>⭐ 9.1</span>
+        <span>🎬 IMAX</span>
+      </div>
+      <div class="movie-times">
+        <span class="time-tag">10:30 AM</span>
+        <span class="time-tag">1:45 PM</span>
+        <span class="time-tag sold-out">5:00 PM</span>
+        <span class="time-tag">8:15 PM</span>
+      </div>
+      <a href="booking.html?movie=echoes" class="btn-book">Book Now</a>
+    </div>
+    </article>
+
+    <!-- MOVIE 2 -->
+    <article class="movie-card featured">
+      <div class="movie-poster" style="background-image: url(posters/Dhurandhar.avif); background-size: cover;">
+        <div class="poster-text">
+          <span class="poster-year">2026</span>
+          <span class="poster-rating">R</span>
+        </div>
+
+        <div class="featured-badge">EDITOR'S PICK</div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-genre">Drama · Mystery</div>
+        <h3 class="movie-title">Dhurandhar : The Revenge </h3>
+        <p class="movie-desc">The film follows Hamza's deep infiltration into the violent Lyari underworld in Karachi,
+          Pakistan, aiming to dismantle a terrorist nexus and destroy it from within through brutal, calculated
+          operations.</p>
+        <div class="movie-meta">
+          <span>⏱ 3h 45m</span>
+          <span>⭐ 9.4</span>
+          <span>🎬 Dolby</span>
+        </div>
+        <div class="movie-times">
+          <span class="time-tag sold-out">11:00 AM</span>
+          <span class="time-tag">2:30 PM</span>
+          <span class="time-tag">6:00 PM</span>
+          <span class="time-tag">9:30 PM</span>
+        </div>
+        <a href="booking.html?movie=letter" class="btn-book">Book Now</a>
+      </div>
+    </article>
+
+    <!-- MOVIE 3 -->
+    <article class="movie-card">
+      <div class="movie-poster" style="background-image: url(posters/thekeralastory.avif); background-size: cover;">
+        <div class="poster-text">
+          <span class="poster-year">2025</span>
+          <span class="poster-rating">PG</span>
+        </div>
+
+      </div>
+      <div class="movie-info">
+        <div class="movie-genre">Adventure · Fantasy</div>
+        <h3 class="movie-title">The Kerala Story 2</h3>
+        <p class="movie-desc">An orphaned cartographer discovers a map leading to an ancient kingdom buried beneath
+          the Sahara desert.</p>
+        <div class="movie-meta">
+          <span>⏱ 2h 10m</span>
+          <span>⭐ 8.7</span>
+          <span>🎬 4K</span>
+        </div>
+        <div class="movie-times">
+          <span class="time-tag">9:00 AM</span>
+          <span class="time-tag">12:15 PM</span>
+          <span class="time-tag">3:30 PM</span>
+          <span class="time-tag sold-out">7:00 PM</span>
+        </div>
+        <a href="booking.html?movie=crown" class="btn-book">Book Now</a>
+      </div>
+    </article>
+
+    <!-- MOVIE 4 -->
+    <article class="movie-card">
+      <div class="movie-poster" style="background-image: url(posters/hailmary2.webp); background-size: cover;">
+        <div class="poster-text">
+          <span class="poster-year">2026</span>
+          <span class="poster-rating">R</span>
+        </div>
+        <div class="poster-art">⬟</div>
+      </div>
+      <div class="movie-info">
+        <div class="movie-genre">Horror · Psychological</div>
+        <h3 class="movie-title">Project Hail Mary</h3>
+        <p class="movie-desc">A family moves into a restored Victorian manor, only to find each room contains a memory
+          that isn't theirs.</p>
+        <div class="movie-meta">
+          <span>⏱ 1h 47m</span>
+          <span>⭐ 8.2</span>
+          <span>🎬 Surround</span>
+        </div>
+        <div class="movie-times">
+          <span class="time-tag">11:30 AM</span>
+          <span class="time-tag sold-out">3:00 PM</span>
+          <span class="time-tag">6:45 PM</span>
+          <span class="time-tag">10:00 PM</span>
+        </div>
+        <a href="booking.html?movie=hollow" class="btn-book">Book Now</a>
+      </div>
+    </article>
+
+    <!-- MOVIE 5 -->
+    <article class="movie-card">
+      <div class="movie-poster" style="background-image: url(posters/ekdin.avif); background-size: cover;">
+        <div class="poster-text">
+          <span class="poster-year">2026</span>
+          <span class="poster-rating">PG-13</span>
+        </div>
+
+      </div>
+      <div class="movie-info">
+        <div class="movie-genre">Romance · Drama</div>
+        <h3 class="movie-title">Ek Din</h3>
+        <p class="movie-desc">Two climate scientists fall in love while racing to document the last glacier in Iceland
+          before it disappears forever.</p>
+        <div class="movie-meta">
+          <span>⏱ 2h 05m</span>
+          <span>⭐ 8.9</span>
+          <span>🎬 4K</span>
+        </div>
+        <div class="movie-times">
+          <span class="time-tag">10:00 AM</span>
+          <span class="time-tag">1:00 PM</span>
+          <span class="time-tag">4:30 PM</span>
+          <span class="time-tag">7:45 PM</span>
+        </div>
+        <a href="booking.html?movie=seasons" class="btn-book">Book Now</a>
+      </div>
+    </article>
+
+    <!-- MOVIE 6 -->
+    <article class="movie-card">
+      <div class="movie-poster" style="background-image: url(posters/toxic.jpg); background-size: cover;">
+        <div class="poster-text">
+          <span class="poster-year">2025</span>
+          <span class="poster-rating">PG-13</span>
+        </div>
+
+      </div>
+      <div class="movie-info">
+        <div class="movie-genre">Action · Espionage</div>
+        <h3 class="movie-title">Toxic</h3>
+        <p class="movie-desc">A deep-cover operative has 12 hours to stop a rogue AI from triggering a global
+          financial collapse.</p>
+        <div class="movie-meta">
+          <span>⏱ 2h 18m</span>
+          <span>⭐ 8.5</span>
+          <span>🎬 IMAX</span>
+        </div>
+        <div class="movie-times">
+          <span class="time-tag">12:00 PM</span>
+          <span class="time-tag">3:15 PM</span>
+          <span class="time-tag sold-out">6:30 PM</span>
+          <span class="time-tag">9:45 PM</span>
+        </div>
+        <a href="booking.html?movie=midnight" class="btn-book">Book Now</a>
+      </div>
+    </article>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">SHOW<span>SPHERE</span></div>
+    <div class="footer-links">
+      <a href="index.html">Now Showing</a>
+      <a href="booking.html">Bookings</a>
+      <a href="food.html">Food &amp; Drinks</a>
+      <a href="confirmation.html">My Tickets</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-copy">© 2026 SHOW SPHERE. All rights reserved.</div>
+  </footer>
+
+</body>
+<script src="shared.js"></script>
+<script src="index (1).js"></script>
+</html>

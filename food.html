@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOW SPHERE — Food &amp; Drinks</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="navbar">
+        <div class="nav-brand">SHOW<span>SPHERE</span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Now Showing</a></li>
+            <li><a href="booking.html">Book Tickets</a></li>
+            <li><a href="food.html" class="active">Food &amp; Drinks</a></li>
+            <li><a href="confirmation.html">My Bookings</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+        <div class="nav-right-group">
+          <div class="location-selector-wrap">
+            <select id="city-select" class="city-select-nav" title="Select your city">
+              <option value="">📍 Select City</option>
+            </select>
+          </div>
+          <a href="login.html" class="nav-login-btn" id="nav-login-link">Login / Sign Up</a>
+          <span class="nav-user-greeting" id="nav-user-greeting" style="display:none"></span>
+          <div class="nav-date" id="nav-date-el"></div>
+        </div>
+    </nav>
+
+    <!-- FOOD HERO -->
+    <header class="food-hero">
+        <div class="food-hero-bg"></div>
+        <div class="food-hero-content">
+            <span class="section-tag">— THE LOUNGE MENU</span>
+            <h1 class="hero-title" style="animation:none">Feast Before<br><em>the Feature</em></h1>
+            <p class="hero-sub" style="animation:none">Artisan bites &amp; crafted drinks, curated for the discerning
+                cinephile. Order ahead — ready at your seat.</p>
+        </div>
+        <div class="food-hero-stats">
+            <div class="food-stat">
+                <span class="stat-num">42</span>
+                <span class="stat-label">Menu Items</span>
+            </div>
+            <div class="food-stat-div"></div>
+            <div class="food-stat">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">Fresh Daily</span>
+            </div>
+            <div class="food-stat-div"></div>
+            <div class="food-stat">
+                <span class="stat-num">15 min</span>
+                <span class="stat-label">To Your Seat</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- FILTER TABS (CSS :target trick) -->
+    <div class="menu-tabs-wrapper">
+        <div class="menu-tabs">
+            <a href="#all" class="tab-link active-tab">All</a>
+            <a href="#snacks" class="tab-link">Snacks</a>
+            <a href="#mains" class="tab-link">Mains</a>
+            <a href="#desserts" class="tab-link">Desserts</a>
+            <a href="#drinks" class="tab-link">Drinks</a>
+            <a href="#combos" class="tab-link">Combos</a>
+        </div>
+    </div>
+
+    <main class="food-main">
+        <div class="food-layout">
+
+            <!-- ── MENU PANEL ── -->
+            <div class="menu-panel">
+
+                <!-- SNACKS -->
+                <section class="menu-category" id="snacks">
+                    <div class="category-header">
+                        <span class="category-icon">🍿</span>
+                        <div>
+                            <h2 class="category-title">Snacks</h2>
+                            <p class="category-sub">The classics, elevated.</p>
+                        </div>
+                    </div>
+
+                    <div class="food-grid">
+
+                        <label class="food-card" for="f1">
+                            <input type="checkbox" id="f1" name="cart" value="f1" class="food-check">
+                            <div class="food-card-img snack-1">
+                                <span class="food-emoji">🍿</span>
+                                <span class="food-badge popular">Popular</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Truffle Popcorn</h3>
+                                    <span class="food-price">₹299</span>
+                                </div>
+                                <p class="food-desc">Black truffle oil, smoked sea salt, parmesan dust. Large bucket.
+                                </p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Large</span>
+                                    <span class="ftag">Signature</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f1" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f1"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f1"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f2">
+                            <input type="checkbox" id="f2" name="cart" value="f2" class="food-check">
+                            <div class="food-card-img snack-2">
+                                <span class="food-emoji">🧀</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Loaded Nachos</h3>
+                                    <span class="food-price">₹349</span>
+                                </div>
+                                <p class="food-desc">Tortilla chips piled with cheddar, jalapeños, sour cream &amp;
+                                    guacamole.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Sharing</span>
+                                    <span class="ftag spicy">🌶 Spicy</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f2" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f2"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f2"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f3">
+                            <input type="checkbox" id="f3" name="cart" value="f3" class="food-check">
+                            <div class="food-card-img snack-3">
+                                <span class="food-emoji">🥨</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Soft Pretzel Bites</h3>
+                                    <span class="food-price">₹199</span>
+                                </div>
+                                <p class="food-desc">Warm pretzel bites with beer-cheese dip and whole grain mustard.
+                                </p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">6 Pcs</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f3" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f3"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f3"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f4">
+                            <input type="checkbox" id="f4" name="cart" value="f4" class="food-check">
+                            <div class="food-card-img snack-4">
+                                <span class="food-emoji">🍗</span>
+                                <span class="food-badge chef">Chef's Pick</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Crispy Wings</h3>
+                                    <span class="food-price">₹449</span>
+                                </div>
+                                <p class="food-desc">Double-fried chicken wings, Korean glaze, sesame &amp; spring
+                                    onion.</p>
+                                <div class="food-tags">
+                                    <span class="ftag nonveg">🍖 Non-Veg</span>
+                                    <span class="ftag">6 Pcs</span>
+                                    <span class="ftag spicy">🌶 Hot</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f4" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f4"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f4"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                    </div>
+                </section>
+
+                <!-- MAINS -->
+                <section class="menu-category" id="mains">
+                    <div class="category-header">
+                        <span class="category-icon">🍔</span>
+                        <div>
+                            <h2 class="category-title">Mains</h2>
+                            <p class="category-sub">Proper meals for the long features.</p>
+                        </div>
+                    </div>
+
+                    <div class="food-grid">
+
+                        <label class="food-card food-card--wide" for="f5">
+                            <input type="checkbox" id="f5" name="cart" value="f5" class="food-check">
+                            <div class="food-card-img main-1">
+                                <span class="food-emoji">🍔</span>
+                                <span class="food-badge popular">Popular</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Black Angus Smash Burger</h3>
+                                    <span class="food-price">₹649</span>
+                                </div>
+                                <p class="food-desc">Double smash patty, aged cheddar, caramelised onions, house sauce,
+                                    brioche bun. Served with shoestring fries.</p>
+                                <div class="food-tags">
+                                    <span class="ftag nonveg">🍖 Non-Veg</span>
+                                    <span class="ftag">Full Meal</span>
+                                    <span class="ftag">Bestseller</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f5" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f5"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f5"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card food-card--wide" for="f6">
+                            <input type="checkbox" id="f6" name="cart" value="f6" class="food-check">
+                            <div class="food-card-img main-2">
+                                <span class="food-emoji">🍕</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Margherita Flatbread</h3>
+                                    <span class="food-price">₹499</span>
+                                </div>
+                                <p class="food-desc">Sourdough base, San Marzano tomato, buffalo mozzarella, fresh
+                                    basil, extra virgin olive oil drizzle.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Shareable</span>
+                                    <span class="ftag">Wood-fired</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f6" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f6"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f6"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card food-card--wide" for="f7">
+                            <input type="checkbox" id="f7" name="cart" value="f7" class="food-check">
+                            <div class="food-card-img main-3">
+                                <span class="food-emoji">🥗</span>
+                                <span class="food-badge chef">Chef's Pick</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Caesar Salad Bowl</h3>
+                                    <span class="food-price">₹399</span>
+                                </div>
+                                <p class="food-desc">Romaine, house-made Caesar dressing, shaved parmesan, anchovy
+                                    croutons, soft-boiled egg.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Light</span>
+                                    <span class="ftag">Gluten-free opt.</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f7" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f7"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f7"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                    </div>
+                </section>
+
+                <!-- DESSERTS -->
+                <section class="menu-category" id="desserts">
+                    <div class="category-header">
+                        <span class="category-icon">🍫</span>
+                        <div>
+                            <h2 class="category-title">Desserts</h2>
+                            <p class="category-sub">Sweet endings for sweeter stories.</p>
+                        </div>
+                    </div>
+
+                    <div class="food-grid">
+
+                        <label class="food-card" for="f8">
+                            <input type="checkbox" id="f8" name="cart" value="f8" class="food-check">
+                            <div class="food-card-img dessert-1">
+                                <span class="food-emoji">🍫</span>
+                                <span class="food-badge popular">Popular</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Molten Lava Cake</h3>
+                                    <span class="food-price">₹349</span>
+                                </div>
+                                <p class="food-desc">Dark 70% chocolate fondant, liquid centre, vanilla bean ice cream.
+                                </p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Warm</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f8" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f8"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f8"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f9">
+                            <input type="checkbox" id="f9" name="cart" value="f9" class="food-check">
+                            <div class="food-card-img dessert-2">
+                                <span class="food-emoji">🍦</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Artisan Ice Cream</h3>
+                                    <span class="food-price">₹249</span>
+                                </div>
+                                <p class="food-desc">Three scoops. Choose from: salted caramel, matcha, berry sorbet, or
+                                    vanilla bean.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">3 Scoops</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f9" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f9"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f9"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f10">
+                            <input type="checkbox" id="f10" name="cart" value="f10" class="food-check">
+                            <div class="food-card-img dessert-3">
+                                <span class="food-emoji">🥐</span>
+                                <span class="food-badge chef">Chef's Pick</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Crème Brûlée</h3>
+                                    <span class="food-price">₹329</span>
+                                </div>
+                                <p class="food-desc">Classic vanilla custard, caramelised sugar crust, fresh
+                                    raspberries.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">French</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f10" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f10"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f10"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                    </div>
+                </section>
+
+                <!-- DRINKS -->
+                <section class="menu-category" id="drinks">
+                    <div class="category-header">
+                        <span class="category-icon">🥤</span>
+                        <div>
+                            <h2 class="category-title">Drinks</h2>
+                            <p class="category-sub">From craft sodas to cinema signatures.</p>
+                        </div>
+                    </div>
+
+                    <div class="food-grid">
+
+                        <label class="food-card" for="f11">
+                            <input type="checkbox" id="f11" name="cart" value="f11" class="food-check">
+                            <div class="food-card-img drink-1">
+                                <span class="food-emoji">☕</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Cold Brew Coffee</h3>
+                                    <span class="food-price">₹199</span>
+                                </div>
+                                <p class="food-desc">18-hour steep single origin, served over large ice with oat milk
+                                    option.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Caffeine</span>
+                                    <span class="ftag">Large</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f11" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f11"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f11"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f12">
+                            <input type="checkbox" id="f12" name="cart" value="f12" class="food-check">
+                            <div class="food-card-img drink-2">
+                                <span class="food-emoji">🧋</span>
+                                <span class="food-badge popular">Popular</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Signature Boba</h3>
+                                    <span class="food-price">₹249</span>
+                                </div>
+                                <p class="food-desc">Brown sugar milk tea, tapioca pearls, tiger stripe caramel.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Signature</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f12" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f12"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f12"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f13">
+                            <input type="checkbox" id="f13" name="cart" value="f13" class="food-check">
+                            <div class="food-card-img drink-3">
+                                <span class="food-emoji">🍊</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Fresh Juice Flight</h3>
+                                    <span class="food-price">₹299</span>
+                                </div>
+                                <p class="food-desc">Three 150ml glasses: orange ginger, watermelon mint, green apple
+                                    celery.</p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">Cold-pressed</span>
+                                    <span class="ftag">3 Glasses</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f13" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f13"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f13"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card" for="f14">
+                            <input type="checkbox" id="f14" name="cart" value="f14" class="food-check">
+                            <div class="food-card-img drink-4">
+                                <span class="food-emoji">🥤</span>
+                            </div>
+                            <div class="food-card-body">
+                                <div class="food-top">
+                                    <h3 class="food-name">Cinema Lemonade</h3>
+                                    <span class="food-price">₹149</span>
+                                </div>
+                                <p class="food-desc">Freshly squeezed lemonade, elderflower cordial, still or sparkling.
+                                </p>
+                                <div class="food-tags">
+                                    <span class="ftag veg">🌿 Veg</span>
+                                    <span class="ftag">House Special</span>
+                                </div>
+                                <div class="food-qty-row">
+                                    <div class="qty-selector">
+                                        <label class="qty-radio"><input type="radio" name="qty-f14" value="1"
+                                                checked><span>×1</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f14"
+                                                value="2"><span>×2</span></label>
+                                        <label class="qty-radio"><input type="radio" name="qty-f14"
+                                                value="3"><span>×3</span></label>
+                                    </div>
+                                    <span class="add-indicator">+ Add</span>
+                                </div>
+                            </div>
+                        </label>
+
+                    </div>
+                </section>
+
+                <!-- COMBOS -->
+                <section class="menu-category" id="combos">
+                    <div class="category-header">
+                        <span class="category-icon">⭐</span>
+                        <div>
+                            <h2 class="category-title">Cinema Combos</h2>
+                            <p class="category-sub">Bundle deals — save more, enjoy more.</p>
+                        </div>
+                    </div>
+
+                    <div class="food-grid food-grid--combos">
+
+                        <label class="food-card combo-card" for="fc1">
+                            <input type="checkbox" id="fc1" name="cart" value="fc1" class="food-check">
+                            <div class="combo-card-inner">
+                                <div class="combo-badge-wrap">
+                                    <span class="combo-save">Save ₹100</span>
+                                </div>
+                                <div class="combo-items-visual">
+                                    <span>🍿</span><span class="plus-sign">+</span><span>🥤</span>
+                                </div>
+                                <div class="food-card-body">
+                                    <div class="food-top">
+                                        <h3 class="food-name">Classic Duo</h3>
+                                        <span class="food-price">₹348 <del class="old-price">₹448</del></span>
+                                    </div>
+                                    <p class="food-desc">Truffle Popcorn (Large) + Cinema Lemonade. The quintessential
+                                        movie pair.</p>
+                                    <div class="food-tags">
+                                        <span class="ftag veg">🌿 Veg</span>
+                                        <span class="ftag">For 1</span>
+                                    </div>
+                                    <div class="food-qty-row">
+                                        <div class="qty-selector">
+                                            <label class="qty-radio"><input type="radio" name="qty-fc1" value="1"
+                                                    checked><span>×1</span></label>
+                                            <label class="qty-radio"><input type="radio" name="qty-fc1"
+                                                    value="2"><span>×2</span></label>
+                                            <label class="qty-radio"><input type="radio" name="qty-fc1"
+                                                    value="3"><span>×3</span></label>
+                                        </div>
+                                        <span class="add-indicator">+ Add</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card combo-card" for="fc2">
+                            <input type="checkbox" id="fc2" name="cart" value="fc2" class="food-check">
+                            <div class="combo-card-inner">
+                                <div class="combo-badge-wrap">
+                                    <span class="combo-save best-value">Best Value</span>
+                                </div>
+                                <div class="combo-items-visual">
+                                    <span>🍔</span><span class="plus-sign">+</span><span>🍿</span><span
+                                        class="plus-sign">+</span><span>🧋</span>
+                                </div>
+                                <div class="food-card-body">
+                                    <div class="food-top">
+                                        <h3 class="food-name">Director's Meal</h3>
+                                        <span class="food-price">₹949 <del class="old-price">₹1,197</del></span>
+                                    </div>
+                                    <p class="food-desc">Smash Burger + Truffle Popcorn + Signature Boba. Full
+                                        indulgence, full feature.</p>
+                                    <div class="food-tags">
+                                        <span class="ftag nonveg">🍖 Non-Veg</span>
+                                        <span class="ftag">For 1–2</span>
+                                        <span class="ftag">Save ₹248</span>
+                                    </div>
+                                    <div class="food-qty-row">
+                                        <div class="qty-selector">
+                                            <label class="qty-radio"><input type="radio" name="qty-fc2" value="1"
+                                                    checked><span>×1</span></label>
+                                            <label class="qty-radio"><input type="radio" name="qty-fc2"
+                                                    value="2"><span>×2</span></label>
+                                            <label class="qty-radio"><input type="radio" name="qty-fc2"
+                                                    value="3"><span>×3</span></label>
+                                        </div>
+                                        <span class="add-indicator">+ Add</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                        <label class="food-card combo-card" for="fc3">
+                            <input type="checkbox" id="fc3" name="cart" value="fc3" class="food-check">
+                            <div class="combo-card-inner">
+                                <div class="combo-badge-wrap">
+                                    <span class="combo-save">Save ₹149</span>
+                                </div>
+                                <div class="combo-items-visual">
+                                    <span>🍕</span><span class="plus-sign">+</span><span>🍫</span><span
+                                        class="plus-sign">+</span><span>🍊</span>
+                                </div>
+                                <div class="food-card-body">
+                                    <div class="food-top">
+                                        <h3 class="food-name">Date Night Bundle</h3>
+                                        <span class="food-price">₹1,148 <del class="old-price">₹1,297</del></span>
+                                    </div>
+                                    <p class="food-desc">Margherita Flatbread + Molten Lava Cake ×2 + Fresh Juice
+                                        Flight. Perfect for two.</p>
+                                    <div class="food-tags">
+                                        <span class="ftag veg">🌿 Veg</span>
+                                        <span class="ftag">For 2</span>
+                                        <span class="ftag">Romantic</span>
+                                    </div>
+                                    <div class="food-qty-row">
+                                        <div class="qty-selector">
+                                            <label class="qty-radio"><input type="radio" name="qty-fc3" value="1"
+                                                    checked><span>×1</span></label>
+                                            <label class="qty-radio"><input type="radio" name="qty-fc3"
+                                                    value="2"><span>×2</span></label>
+                                            <label class="qty-radio"><input type="radio" name="qty-fc3"
+                                                    value="3"><span>×3</span></label>
+                                        </div>
+                                        <span class="add-indicator">+ Add</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </label>
+
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- ── ORDER SIDEBAR ── -->
+            <aside class="order-sidebar">
+                <div class="sidebar-sticky">
+                    <div class="sidebar-header">
+                        <span class="step-label" style="margin-bottom:0;padding-bottom:0;border:none;">YOUR ORDER</span>
+                        <span class="sidebar-seat">Seat: D7 · Hall 3</span>
+                    </div>
+
+                    <!-- Order items list (static preview) -->
+                    <div class="order-list">
+                        <div class="order-empty">
+                            <span class="order-empty-icon">🛒</span>
+                            <p>Select items from the menu to add them to your order.</p>
+                        </div>
+                    </div>
+
+                    <!-- Dietary filters -->
+                    <div class="diet-filters">
+                        <div class="diet-title">Dietary Filter</div>
+                        <div class="diet-options">
+                            <label class="diet-toggle">
+                                <input type="checkbox" name="diet" value="veg">
+                                <span>🌿 Veg Only</span>
+                            </label>
+                            <label class="diet-toggle">
+                                <input type="checkbox" name="diet" value="gf">
+                                <span>🌾 Gluten-Free</span>
+                            </label>
+                            <label class="diet-toggle">
+                                <input type="checkbox" name="diet" value="spicy">
+                                <span>🌶 Spicy</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Special requests -->
+                    <div class="special-req">
+                        <label class="field-label" for="specreq">Special Requests</label>
+                        <textarea id="specreq" name="special_requests"
+                            placeholder="e.g. No onions, extra sauce, allergy notes..." rows="3"></textarea>
+                    </div>
+
+                    <!-- Delivery time -->
+                    <div class="delivery-pref">
+                        <div class="diet-title">Deliver When?</div>
+                        <div class="deliver-radios">
+                            <label class="time-radio"><input type="radio" name="deliver" value="before"
+                                    checked><span>Before the film</span></label>
+                            <label class="time-radio"><input type="radio" name="deliver" value="interval"><span>During
+                                    interval</span></label>
+                            <label class="time-radio"><input type="radio" name="deliver"
+                                    value="asap"><span>ASAP</span></label>
+                        </div>
+                    </div>
+
+                    <!-- Price breakdown -->
+                    <div class="price-breakdown">
+                        <div class="price-row"><span>Subtotal</span><span>—</span></div>
+                        <div class="price-row"><span>Service Charge (5%)</span><span>—</span></div>
+                        <div class="price-row total-row"><span>Total</span><span class="gold-text">—</span></div>
+                    </div>
+
+                    <a href="confirmation.html" class="btn-primary"
+                        style="display:block;text-align:center;margin-top:8px;">Place Order →</a>
+                    <a href="booking.html" class="btn-outline"
+                        style="display:block;text-align:center;margin-top:12px;">← Back to Booking</a>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- ALLERGEN NOTE -->
+    <div class="allergen-bar">
+        <span class="allergen-icon">ℹ</span>
+        <p>All items are prepared in a kitchen that handles nuts, gluten, dairy, and shellfish. Please inform our staff
+            of any severe allergies. Prices include GST. Items subject to availability.</p>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-brand">SHOW<span>SPHERE</span></div>
+        <div class="footer-links">
+            <a href="index.html">Now Showing</a>
+            <a href="booking.html">Bookings</a>
+            <a href="food.html">Food &amp; Drinks</a>
+            <a href="confirmation.html">My Tickets</a>
+            <a href="contact.html">Contact Us</a>
+        </div>
+        <div class="footer-copy">© 2026 SHOW SPHERE. All rights reserved.</div>
+    </footer>
+
+</body>
+<script src="shared.js"></script>
+<script src="food (1).js"></script>
+</html>

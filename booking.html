@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHOW SPHERE — Book Tickets</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Mono:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,600;1,300&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar">
+    <div class="nav-brand">SHOW<span>SPHERE</span></div>
+    <ul class="nav-links">
+      <li><a href="index.html">Now Showing</a></li>
+      <li><a href="booking.html" class="active">Book Tickets</a></li>
+      <li><a href="food.html">Food &amp; Drinks</a></li>
+      <li><a href="confirmation.html">My Bookings</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+    </ul>
+    <div class="nav-right-group">
+      <div class="location-selector-wrap">
+        <select id="city-select" class="city-select-nav" title="Select your city">
+          <option value="">📍 Select City</option>
+        </select>
+      </div>
+      <a href="login.html" class="nav-login-btn" id="nav-login-link">Login / Sign Up</a>
+      <span class="nav-user-greeting" id="nav-user-greeting" style="display:none"></span>
+      <div class="nav-date" id="nav-date-el"></div>
+    </div>
+  </nav>
+
+  <!-- PAGE HEADER -->
+  <div class="page-header">
+    <span class="section-tag">— RESERVATION</span>
+    <h1>Book Your <em>Seats</em></h1>
+  </div>
+
+  <main class="booking-main">
+
+    <!-- STEP 1: SELECT MOVIE & SHOW -->
+    <section class="booking-section">
+      <div class="step-label">01 — SELECT FILM &amp; SHOWTIME</div>
+
+      <div class="select-row">
+        <div class="field-group">
+          <label class="field-label" for="movie-select">Film</label>
+          <select id="movie-select" class="styled-select" name="movie">
+            <option value="">— Choose a Film —</option>
+            <option value="echoes">Hoppers</option>
+            <option value="letter" selected>Dhurandhar : The Revenge </option>
+            <option value="crown">The Kerala Story 2</option>
+            <option value="hollow">Project Hail Mary</option>
+            <option value="seasons">Ek Din</option>
+            <option value="midnight">Toxic</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label" for="date-select">Date</label>
+          <select id="date-select" class="styled-select" name="date">
+            <option value="">— Choose a Date —</option>
+            <option value="mar31">May 30, 2026 (Today)</option>
+            <option value="apr01">May 31, 2026</option>
+            <option value="apr02">June 01, 2026</option>
+            <option value="apr03">June 02, 2026</option>
+            <option value="apr04">June 03, 2026</option>
+          </select>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Showtime</label>
+          <div class="time-radio-group">
+            <label class="time-radio"><input type="radio" name="showtime" value="1030"><span>10:30 AM</span></label>
+            <label class="time-radio"><input type="radio" name="showtime" value="1400" checked><span>2:30
+                PM</span></label>
+            <label class="time-radio"><input type="radio" name="showtime" value="1800"><span>6:00 PM</span></label>
+            <label class="time-radio"><input type="radio" name="showtime" value="2130"><span>9:30 PM</span></label>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label class="field-label">Format</label>
+          <div class="time-radio-group">
+            <label class="time-radio"><input type="radio" name="format" value="standard"
+                checked><span>Standard</span></label>
+            <label class="time-radio"><input type="radio" name="format" value="dolby"><span>Dolby</span></label>
+            <label class="time-radio"><input type="radio" name="format" value="imax"><span>IMAX</span></label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STEP 2: CHOOSE SEATS -->
+    <section class="booking-section">
+      <div class="step-label">02 — CHOOSE SEATS</div>
+
+      <div class="screen-wrapper">
+        <div class="screen-bar">SCREEN</div>
+      </div>
+
+      <div class="seat-legend">
+        <span class="legend-item"><span class="legend-dot available"></span> Available</span>
+        <span class="legend-item"><span class="legend-dot selected"></span> Selected</span>
+        <span class="legend-item"><span class="legend-dot taken"></span> Taken</span>
+        <span class="legend-item"><span class="legend-dot premium"></span> Premium</span>
+      </div>
+
+      <div class="seat-map">
+        <!-- ROW A -->
+        <div class="seat-row">
+          <span class="row-label">A</span>
+          <label class="seat taken"><input type="checkbox" disabled><span>A1</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A2"><span>A2</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A3"><span>A3</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A4"><span>A4</span></label>
+          <div class="aisle"></div>
+          <label class="seat taken"><input type="checkbox" disabled><span>A5</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>A6</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A7"><span>A7</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A8"><span>A8</span></label>
+          <div class="aisle"></div>
+          <label class="seat"><input type="checkbox" name="seat" value="A9"><span>A9</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A10"><span>A10</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>A11</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="A12"><span>A12</span></label>
+        </div>
+
+        <!-- ROW B -->
+        <div class="seat-row">
+          <span class="row-label">B</span>
+          <label class="seat"><input type="checkbox" name="seat" value="B1"><span>B1</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>B2</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>B3</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="B4"><span>B4</span></label>
+          <div class="aisle"></div>
+          <label class="seat"><input type="checkbox" name="seat" value="B5"><span>B5</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="B6"><span>B6</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>B7</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="B8"><span>B8</span></label>
+          <div class="aisle"></div>
+          <label class="seat taken"><input type="checkbox" disabled><span>B9</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="B10"><span>B10</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="B11"><span>B11</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>B12</span></label>
+        </div>
+
+        <!-- ROW C -->
+        <div class="seat-row">
+          <span class="row-label">C</span>
+          <label class="seat"><input type="checkbox" name="seat" value="C1"><span>C1</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="C2"><span>C2</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>C3</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>C4</span></label>
+          <div class="aisle"></div>
+          <label class="seat taken"><input type="checkbox" disabled><span>C5</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="C6"><span>C6</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="C7"><span>C7</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>C8</span></label>
+          <div class="aisle"></div>
+          <label class="seat"><input type="checkbox" name="seat" value="C9"><span>C9</span></label>
+          <label class="seat taken"><input type="checkbox" disabled><span>C10</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="C11"><span>C11</span></label>
+          <label class="seat"><input type="checkbox" name="seat" value="C12"><span>C12</span></label>
+        </div>
+
+        <!-- ROW D — PREMIUM -->
+        <div class="seat-row premium-row">
+          <span class="row-label gold">D</span>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D1"><span>D1</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>D2</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D3"><span>D3</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D4"><span>D4</span></label>
+          <div class="aisle"></div>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>D5</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>D6</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D7"><span>D7</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D8"><span>D8</span></label>
+          <div class="aisle"></div>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D9"><span>D9</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D10"><span>D10</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>D11</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="D12"><span>D12</span></label>
+        </div>
+
+        <!-- ROW E — PREMIUM -->
+        <div class="seat-row premium-row">
+          <span class="row-label gold">E</span>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>E1</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="E2"><span>E2</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>E3</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="E4"><span>E4</span></label>
+          <div class="aisle"></div>
+          <label class="seat premium"><input type="checkbox" name="seat" value="E5"><span>E5</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>E6</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>E7</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="E8"><span>E8</span></label>
+          <div class="aisle"></div>
+          <label class="seat premium"><input type="checkbox" name="seat" value="E9"><span>E9</span></label>
+          <label class="seat premium"><input type="checkbox" name="seat" value="E10"><span>E10</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>E11</span></label>
+          <label class="seat premium taken"><input type="checkbox" disabled><span>E12</span></label>
+        </div>
+      </div>
+
+      <div class="pricing-info">
+        <span>Standard: <strong>₹299</strong></span>
+        <span>Premium (D–E): <strong>₹499</strong></span>
+      </div>
+    </section>
+
+    <!-- STEP 3: PERSONAL DETAILS -->
+    <section class="booking-section">
+      <div class="step-label">03 — YOUR DETAILS</div>
+
+      <form class="booking-form" action="confirmation.html" method="get">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="fname" placeholder="e.g. Arjun" required>
+          </div>
+          <div class="form-field">
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lname" placeholder="e.g. Sharma" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 00000 00000" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label>Ticket Type</label>
+            <div class="ticket-type-group">
+              <label class="ticket-type-radio">
+                <input type="radio" name="tickettype" value="adult" checked>
+                <span>Adult (18+)</span>
+              </label>
+              <label class="ticket-type-radio">
+                <input type="radio" name="tickettype" value="student">
+                <span>Student</span>
+              </label>
+              <label class="ticket-type-radio">
+                <input type="radio" name="tickettype" value="senior">
+                <span>Senior (60+)</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label>Add-ons</label>
+            <div class="addon-group">
+              <label class="addon-check">
+                <input type="checkbox" name="addon" value="popcorn">
+                <span>🍿 Popcorn Combo +₹199</span>
+              </label>
+              <label class="addon-check">
+                <input type="checkbox" name="addon" value="nachos">
+                <span>🧀 Nachos &amp; Dip +₹149</span>
+              </label>
+              <label class="addon-check">
+                <input type="checkbox" name="addon" value="drink">
+                <span>🥤 Large Drink +₹99</span>
+              </label>
+              <label class="addon-check">
+                <input type="checkbox" name="addon" value="vip">
+                <span>⭐ Director's Lounge Access +₹799</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field full">
+            <label for="promo">Promo Code</label>
+            <input type="text" id="promo" name="promo" placeholder="Enter promo code">
+          </div>
+        </div>
+
+        <div class="order-summary">
+          <div class="summary-title">Order Summary</div>
+          <div class="summary-row"><span>Film</span><span>Dhurandhar : The Revenge </span></div>
+          <div class="summary-row"><span>Date &amp; Time</span><span>Apr 1, 2026 · 2:30 PM</span></div>
+          <div class="summary-row"><span>Format</span><span>Dolby Atmos</span></div>
+          <div class="summary-row"><span>Seats</span><span>Select from map above</span></div>
+          <div class="summary-row total"><span>Estimated Total</span><span>₹ —</span></div>
+        </div>
+
+        <button type="submit" class="btn-primary btn-confirm">Confirm Booking →</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-brand">SHOW<span>SPHERE</span></div>
+    <div class="footer-links">
+      <a href="index.html">Now Showing</a>
+      <a href="booking.html">Bookings</a>
+      <a href="food.html">Food &amp; Drinks</a>
+      <a href="confirmation.html">My Tickets</a>
+      <a href="contact.html">Contact Us</a>
+    </div>
+    <div class="footer-copy">© 2026 SHOW SPHERE. All rights reserved.</div>
+  </footer>
+
+</body>
+<script src="shared.js"></script>
+<script src="booking (1).js"></script>
+</html>
